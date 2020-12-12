@@ -5,7 +5,20 @@
 	--primary: hsl(185, 75%, 39%);
 	--secondary: hsl(229, 23%, 23%);
 	--tertiary: hsl(227, 10%, 46%);
+	--quaternary: hsl(0, 0%, 59%);
 }
+/* global */
+.sub {
+	margin-top: 5px;
+	color: var(--quaternary);
+	font-size: 0.7em;
+	font-weight: 500;
+}
+hr {
+	background: var(--quaternary);
+	opacity: 0.2;
+}
+/* End */
 body {
 	height: 100vh;
 	width: 100%;
@@ -14,6 +27,97 @@ body {
 		url("./images/bg-pattern-bottom.svg");
 	background-position: -80% -70vh, 160% 50vh;
 	background-repeat: no-repeat;
-	display: grid;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Kumbh Sans", sans-serif;
+	font-size: 18px;
+	position: relative;
+}
+.profile-container {
+	width: 25vw;
+	height: 55vh;
+	background: white;
+	border-radius: 1rem;
+}
+.profile-container .top-bg {
+	height: 37%;
+	border-radius: 1rem 1rem 0 0;
+	background: url("./images/bg-pattern-card.svg");
+}
+.profile {
+	height: 150px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	font-size: 1em;
+}
+.profile-img-circle {
+	width: 110px;
+	height: 110px;
+	background: white;
+	border-radius: 60%;
+	position: absolute;
+	top: -60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	place-content: center;
+}
+.profile-img-circle .circle-img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.profile-container .profile .info {
+	position: relative;
+	top: 50%;
+	font-weight: bold;
+	text-align: center;
+}
+.profile-container .profile .info #sub-1 {
+	color: var(--quaternary);
+	font-weight: 400;
+}
+.profile-container .profile .info .sub {
+	margin-top: 10px;
+}
+.profile-container .bottom {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+	padding: 1.6rem;
+}
+.profile-container .bottom .social {
+	text-align: center;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.profile-container .bottom .social h3 {
+	font-size: 1em;
+}
+/* Media quaries */
+@media screen and (max-width: 768px) and (min-width:320px){
+	body{
+		background-position: -190vw -110vh, 40vw 40vh;
+	}
+	.profile-container{
+		width: 85vw;
+		height: 65vh;
+	}
+}
+@media screen and (max-width: 1024px) and (min-width:720px) {
+	body{
+		background-position: -30vw -130vh, 50vw 50vh;
+	}
+	.profile-container{
+		width: 40vw;
+		height: 65vh;
+	}
 }
